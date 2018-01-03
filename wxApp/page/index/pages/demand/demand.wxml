@@ -1,0 +1,269 @@
+<!-- demand.wxml -->
+<view class='page'>
+  <view class='top-background'></view>
+  <view class='index-bd'>
+    <view class='demand-bd'>
+      <view class='contact-box'>
+        <navigator url='../contact/contact?chooseAddr=true'>
+          <view class='panel-padding'>
+            <view class='contact-name l-font'>
+              <text class='strong'>{{name1}}</text>
+              <view class='contact-img-box'>
+                <image class='contact-img-phone' src='../../../../images/phone.png'></image>
+              </view>
+              <text class='userphone'>{{phone1}}</text>
+            </view>
+            <view class='contact-address'>
+              <view class='contact-img-box'>
+                <image class='contact-img-address' src='../../../../images/position.png'></image>
+              </view>
+              <text class='contact-desc'>{{province1}}{{city1}}{{district1}}{{addr1}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+      <view class='select-list'>
+        <form bindsubmit="formSubmit" report-submit='true'>
+          <!-- <form bindsubmit="formSubmit" > -->
+          <!-- 选择服务类型 -->
+          <view class='select-list-item'>
+            <view class='select-list-item-title'>
+              <image class='select-list-item-icon' src='../../resources/tools.png'></image>
+              <text class='l-font'>全能服务</text>
+              <!-- <view class="item-title-ft"> 
+                <image src='../../resources/arrow-right.png' class="rotate-arrow {{showService ? 'ro' : ''}}"></image>
+              </view> -->
+            </view>
+
+            <view class='select-list-item-content'>
+              <!-- <view class="select-list-item-txtarea {{showService ? 'select-list-item-txtarea-show' : ''}}"> -->
+              <view class="catalog_items display-flex-row">
+                <block wx:for="{{gooditems1}}" wx:key="id">
+                  <text data-select="{{item.id}}" data-item-name="{{item.skill}}" class="{{item.id == itemSelect ? 'active':''}} catalog_item" bindtap="chooseItem">{{item.skill}}
+                </text>
+                </block>
+              </view>
+            </view>
+          </view>
+          <!-- 选择上门时间 -->
+
+          <view class='select-list-item'>
+            <!-- <view class='select-list-item-title weui-cell_access'>
+              <image class='select-list-item-icon' src='../../resources/time.png'></image>
+              <text class='l-font'>预约时间</text>
+            </view>
+
+            <view class="section">
+              <picker mode="date" value="{{date}}" start="2017-10-01" end="2220-10-01" bindchange="bindDateChange">
+                <image src='../../resources/arrow-right.png' class="pickerImg"></image>
+                <view class="picker pl50rpx l-font pt20">
+                  日期选择:
+                  <text class='pl50rpx'>{{date}}</text>
+                </view>
+              </picker>
+            </view>
+
+            <view class="section">
+              <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+                <image src='../../resources/arrow-right.png' class="pickerImg"></image>
+                <view class="picker pl50rpx l-font pt20">
+                  时间选择:
+                  <text class='pl50rpx'>{{time}}</text>
+                </view>
+              </picker>
+            </view> -->
+
+            <view class="section">
+              <picker mode="multiSelector" bindchange="bindMultiPickerChange1" value='{{mIndex}}' range="{{mArray}}">
+               <image src='../../resources/arrow-right.png' class="pickerImg"></image>
+               <image src='../../resources/time.png' class='timeSelectPic'></image>
+                <view class="picker pl55rpx l-font pt20">
+                  预约时间
+                   <text class='pl50rpx'>{{mArray[0][newIndex[0]]}} {{mArray[1][newIndex[1]]}}</text> 
+                  <!-- <text class='pl50rpx'>{{whenTime}}</text> -->
+                </view>
+              </picker>
+            </view>
+            <!-- <button type="primary" bindtap="timeTest">测试数据</button> -->
+
+          </view>
+
+
+          <!-- 文字描述 -->
+          <view class='select-list-item'>
+            <view class='select-list-item-title weui-cell_access' bindtap="kindToggle">
+              <image class='select-list-item-icon' src='../../resources/write.png'></image>
+              <text class='l-font'>文字描述<text style='font-size:12px'>（选填）</text></text>
+              <view class="item-title-ft">
+                <!-- <view class="weui-cell__ft rotate-arrow {{showTxt ? 'ro' : ''}}"></view> -->
+                <image src='../../resources/arrow-right.png' class="rotate-arrow {{showTxt ? 'ro' : ''}}"></image>
+              </view>
+            </view>
+
+            <view class="select-list-item-txtarea {{showTxt ? 'select-list-item-txtarea-show' : ''}}">
+              <textarea class="weui-textarea textarea" placeholder='补充备注说明' placeholder-style='color:#999;' bindinput="bindTextInt"></textarea>
+            </view>
+          </view>
+          <!-- 选择图片上传 -->
+          <view class='select-list-item'>
+            <view class='select-list-item-title'>
+              <image class='select-list-item-icon' src='../../resources/camera.png'></image>
+              <text class='l-font'>哪里坏拍哪里<text style='font-size:12px'>（选填）</text></text>
+              <view class='item-title-ft'>{{imageList.length}}/{{count[countIndex]}}</view>
+            </view>
+
+            <view class="weui-cells">
+              <view class="weui-uploader-cell">
+                <view class="weui-cell__bd">
+                  <view class="weui-uploader">
+                    <view class="weui-uploader__bd">
+                      <view class="weui-uploader__files">
+                        <block wx:for="{{imageList}}" wx:for-item="image" wx:key='index'>
+                          <view class="weui-uploader__file">
+                            <view class='img-box-item'>
+
+                              <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                              <view class="delete" bindtap="deleteImage" data-index="{{index}}">
+                                <image src="../../resources/delete.png" />
+                              </view>
+                            </view>
+                          </view>
+                        </block>
+                      </view>
+                      <view class="weui-uploader__input-box {{imageList.length>=3? 'hide':''}}">
+                        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 语音描述 -->
+          <view class='select-list-item'>
+            <view class='select-list-item-title'>
+              <image class='select-list-item-icon' src='../../resources/record.png'></image>
+              <text class='l-font'>请告诉我您的需求</text>
+            </view>
+
+
+            <view class='select-list-item-content'>
+              <view class="page-section">
+                <block wx:if="{{recording === false && playing === false && hasRecord === false}}">
+                  <view class="page-body-time">
+                    <text class="time-big strong">{{formatedRecordTime}}</text>
+                  </view>
+                  <view class="page-body-buttons">
+                    <view class="page-body-button"></view>
+                    <view class="page-body-button" bindtap="startRecord">
+                      <image src="../../../../images/record.png"></image>
+                    </view>
+                    <view class="page-body-button"></view>
+                  </view>
+                </block>
+
+                <block wx:if="{{recording === true}}">
+                  <view class="page-body-time">
+                    <text class="time-big strong">{{formatedRecordTime}}</text>
+                  </view>
+                  <view class="page-body-buttons">
+                    <view class="page-body-button"></view>
+                    <view class="page-body-button" bindtap="stopRecord">
+                      <view class="button-stop-record"></view>
+                    </view>
+                    <view class="page-body-button"></view>
+                  </view>
+                </block>
+
+                <block wx:if="{{hasRecord === true && playing === false}}">
+                  <view class="page-body-time">
+                    <text class="time-big strong">{{formatedPlayTime}}/{{formatedRecordTime}}</text>
+                    <!-- <text class="time-small">{{formatedRecordTime}}</text> -->
+                  </view>
+                  <view class="page-body-buttons">
+                    <view class="page-body-button"></view>
+                    <view class="page-body-button" bindtap="playVoice">
+                      <image src="../../../../images/play.png"></image>
+                    </view>
+                    <view class="page-body-button" bindtap="clear">
+                      <image src="../../../../images/trash.png"></image>
+                    </view>
+                  </view>
+                </block>
+
+                <block wx:if="{{hasRecord === true && playing === true}}">
+                  <view class="page-body-time">
+                    <text class="time-big strong">{{formatedPlayTime}}/{{formatedRecordTime}}</text>
+                    <!-- <text class="time-small">{{formatedRecordTime}}</text> -->
+                  </view>
+                  <view class="page-body-buttons">
+                    <view class="page-body-button" bindtap="stopVoice">
+                      <image src="../../../../images/stop.png"></image>
+                    </view>
+                    <!-- <view class="page-body-button" bindtap="pauseVoice">
+                  <image src="/image/pause.png"></image>
+                </view> -->
+                    <view class="page-body-button" bindtap="clear">
+                      <image src="../../../../images/trash.png"></image>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+
+          </view>
+
+          <!-- <view class='select-list-item'>
+            <view class='select-list-item-title'>
+              <image class='select-list-item-icon' src='../../resources/camera.png'></image>
+              <text class='l-font'>图片上传（选填）</text>
+              <view class='item-title-ft'>{{imageList2.length}}/3</view>
+            </view>
+
+            <view class="weui-cells">
+              <view class="weui-uploader-cell">
+                <view class="weui-cell__bd">
+                  <view class="weui-uploader">
+                    <view class="weui-uploader__bd">
+                      <view class="weui-uploader__files">
+                        <block wx:for="{{imageList2}}" wx:for-item="image" wx:key='index'>
+                          <view class="weui-uploader__file">
+                            <view class='img-box-item'>
+
+                              <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage1"></image>
+                              <view class="delete" bindtap="deleteImage1" data-index="{{index}}">
+                                <image src="../../resources/delete.png" />
+                              </view>
+                            </view>
+                          </view>
+                        </block>
+                      </view>
+                      <view class="weui-uploader__input-box {{imageList2.length>=3? 'hide':''}}">
+                        <view class="weui-uploader__input" bindtap="chooseImage1"></view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>  -->
+          <!-- <button class="btn" bindtap='testPic'>测试上传图片</button>  -->
+          <!-- <button class="btn" bindtap='testUpdateRecord'>测试上传录音</button>   -->
+          <!-- <button class="btn" bindtap='test'>测试跳转</button> -->
+          <view class="low-bottom-box" style='left:0'>
+            <button form-type="submit" class="low-bottom-btn" disabled='{{btnDis}}'>确认服务</button>
+          </view>
+        </form>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class='emptybox'></view>
+  <!-- <view class="low-bottom-box" style='left:0'>
+     <button form-type="submit" class="low-bottom-btn" bindtap='showPicRecord'>确认服务</button>  
+  </view> -->
+</view>

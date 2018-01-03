@@ -1,0 +1,52 @@
+<view class="page">
+  <!-- <view class='btn-area'>
+    <button bindtap="showMap" class='primary-btn'>更改</button>
+  </view> -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_form">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <label class="weui-label">姓名</label>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="text" placeholder="请输入联系人姓名" bindinput="nameInput" placeholder-style='color:#999' value="{{contactName}}" disabled />
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <label class="weui-label">联系电话</label>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="number" bindinput="phoneInput"  placeholder="请输入手机号" placeholder-style='color:#999' value="{{contactPhone}}" />
+      </view>
+    </view>
+
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <label for="" class="weui-label">维修地址</label>
+      </view>
+     <view class="weui-cell__bd">
+        <input class="weui-input" type="text" placeholder="地址"  placeholder-style='color:#999' value="{{city}}{{district}}{{street_number}}"  bindtap="showMap" disabled='true' />
+      </view>
+    </view>
+
+    <view class="weui-cell address-input-box">
+      <view class="weui-cell__hd">
+        <label class="weui-label">备注(选填)</label>
+      </view>
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" type="tel" placeholder="定位若不够精确可填写备注" placeholder-style='color:#999' rows="3" bindinput="detailInput"></textarea>
+      </view>
+    </view>
+
+
+  </view>
+
+
+
+  <view class='btn-area'>
+    <!-- <navigator url='../contact/contact'> -->
+    <button class='primary-btn' bindtap="useContact">使用</button>
+    <!-- </navigator> -->
+  </view>
+</view>

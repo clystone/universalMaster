@@ -1,0 +1,69 @@
+<view class="page1">
+  <view class="navbar">
+    <view class="navbar-item" bindtap='redirectTo0'>
+      <text class="navbar-text active">全部</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo1'>
+      <text class="navbar-text">进行中</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo2'>
+      <text class="navbar-text">已完成</text>
+    </view>
+  </view>
+  <!-- 待接单 -->
+  <!-- <view wx:if="{{currentNavbar==0}}" class='order-list'> -->
+  <view class='orderTitBox'>
+    <text class='orderTit'>进行中</text>
+  </view>
+  <view class='orderBox'>
+    <view class='order-item-hd'>
+      <view class='order-item-top'>
+        <image class='order-img' src='../../../../images/master-wait.png'></image>
+        <view class='order-user-info'>
+          <text class='colorCCC'>待师傅接单中</text>
+        </view>
+        <text class='order-status'>下单成功</text>
+      </view>
+      <view class='order-item-mid tac'>
+        <view class='pt10'>空调维修</view>
+        <view class='fs36'>￥35</view>
+        <view class='fs12 colorCCC'>上门费 15元 - 加急费 20元 - 产品维修费 待确定</view>
+      </view>
+      <view class='order-item-bot'>
+        <view class='flex1 colorAAA borderRight'>取消订单</view>
+        <view class='flex1 colorBlue'>加急</view>
+      </view>
+    </view>
+  </view>
+  <view class='orderBox'>
+    <view class='order-item-hd'>
+      <view class='order-item-top'>
+        <image class='order-img' src='../../../../images/master-portrait.jpg'></image>
+        <view class='order-user-info'>
+          <text>牛师傅</text>
+        </view>
+        <text class='order-status'>预约成功</text>
+      </view>
+      <view class='order-item-mid tac'>
+        <view class='pt10'>门窗家具维修</view>
+        <view class='fs36'>￥15</view>
+        <view class='fs12 colorCCC'>上门费 15元 - 加急费 20元 - 产品维修费 待确定</view>
+      </view>
+      <view class='order-item-bot'>
+        <view class='flex1 colorAAA borderRight'>更换师傅</view>
+        <view class='flex1 colorAAA borderRight'>取消订单</view>
+        <view class='flex1 colorBlue'>确认上门</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="tips1">
+  <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+    <icon type="waiting" size="20" />
+    <text>玩命的加载中...</text>
+  </view>
+  <view wx:else>
+    <text>没有更多内容了</text>
+  </view>
+</view> -->

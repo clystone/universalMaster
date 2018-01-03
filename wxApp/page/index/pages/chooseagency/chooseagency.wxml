@@ -1,0 +1,18 @@
+<view class='select-list'>
+  <view class='select-list-item'>
+    <view class='select-list-item-title'>
+      <image class='select-list-item-icon' src='../../resources/like.png'></image>
+      <text class='l-font'>选择所属楼盘</text>
+    </view>
+
+    <view class='select-list-item-content'>
+      <view class="catalog_items display-flex-row">
+        <block wx:for="{{agencies}}" wx:key="id">
+          <text data-select="{{item.id}}" data-item-name="{{item.addr}}" class="{{item.id == itemSelect ? 'active':''}} catalog_item" bindtap="chooseItem">{{item.addr}}
+                </text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<button class='bottomBtn' bindtap='ensureAgency'>确定</button>

@@ -1,0 +1,71 @@
+<view class="page">
+  <view class="navbar">
+    <view class="navbar-item" bindtap='redirectTo0'>
+      <text class="fs12 navbar-text">待接单</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo1'>
+      <text class="fs12 navbar-text">已接单</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo2'>
+      <text class="fs12 navbar-text">已上门</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo3'>
+      <text class="fs12 navbar-text">待支付</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo4'>
+      <text class="fs12 navbar-text">已完成</text>
+    </view>
+    <view class="navbar-item" bindtap='redirectTo5'>
+      <text class="fs12 navbar-text active">已取消</text>
+    </view>
+  </view>
+  <!-- 已取消 -->
+  <view wx:if="{{currentNavbar==5}}" class='order-list'>
+    <view class='order-list-item cancel-box'>
+      <view class='order-item-hd'>
+        <navigator url='' hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>王师傅</text>
+            <view class='kind-list-bd kind-list-date'>2017-01-01 12:00</view>
+          </view>
+          <text class='order-status cancel-status'>已取消</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <view class='kind-list'>
+          <view class='kind-list-item'>
+            <view class='kind-list-hd'>
+              <image class='other-icon' src='resources/other.png'></image>
+            </view>
+            <view class='kind-list-bd'>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label service-type">空调维修</label>
+                  <text class="weui-form-preview__value total-price"></text>
+                </view>
+              </view>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">上门费</label>
+                  <text class="weui-form-preview__value">￥5</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">加急费</label>
+                  <text class="weui-form-preview__value">￥5</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">产品维修费</label>
+                  <text class="weui-form-preview__value">待确定</text>
+                </view>
+
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

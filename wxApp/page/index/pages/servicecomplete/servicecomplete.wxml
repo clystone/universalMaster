@@ -1,0 +1,166 @@
+<view class='page'>
+  <view class='order-status-box'>
+    <image class='order-status-img' src='../../../../images/service-done.png'></image>
+    <view class='order-status-txt'>
+      <view class='strong'>服务完成!</view>
+      <view class='s-font'>支付成功后就可以对师傅进行评价啦</view>
+    </view>
+  </view>
+
+  <!-- 师傅 -->
+  <view class='kind-list'>
+    <view class='panel-padding master-info'>
+      <view class='master-info-hd'>
+        <image src='../../../../images/master-portrait.jpg'></image>
+      </view>
+      <view class='master-info-bd'>
+        <view>{{order.master.realName}}</view>
+        <view>
+          <block wx:for="{{stars}}" wx:key='index'>
+            <image class="star-image" style='margin-left:1px;' src="{{keys > item ?selectedSrc: normalSrc}}">
+            </image>
+          </block>
+        </view>
+      </view>
+      <view class='master-info-ft' bindtap='makePhoneCall'>
+        <!-- <button class='master-info-btn'>查看评价</button>  -->
+        <image src='../../../../images/dial.png'></image>
+        <text>{{order.master.phone}}</text>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 订单详情 -->
+  <view class='kind-list'>
+    <view class='complainBox' bindtap='makePhoneCall1'>
+      <image class='complainPic' src='../../../../images/complain.png'></image>
+      <text class='complainText'>我要投诉</text>
+    </view>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>服务类型</view>
+        <view class='kind-list-bd'>{{order.skill}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>预约时间</view>
+        <view class='kind-list-bd'>{{bookTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>联系方式</view>
+        <view class='kind-list-bd'>
+          <text>{{order.provice}}{{order.city}}{{order.district}}{{order.addr}}\n{{order.name}}　{{order.phone}}</text>
+        </view>
+      </view>
+      <view class='divider'></view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>文字描述</view>
+        <view class='kind-list-bd'>{{order.remark}}</view>
+      </view>
+      <view class='kind-list-item' wx:if='{{showAudio}}'>
+        <view class='kind-list-bd voice-box'>
+          <audio name="语音描述" author='' binderror="audioError" src="{{audioSrc}}" id="myAudio" controls></audio>
+        </view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>相关图片</view>
+        <view class='kind-list-bd'>
+          <image src='{{imgSrc}}' binderror="imgError" class='order-relate-img' wx:if='{{showPic}}'></image>
+          <image src='{{imgSrc1}}' wx:if='{{showPic1}}' binderror="imgError1" class='order-relate-img'></image>
+          <image src='{{imgSrc2}}' wx:if='{{showPic2}}' binderror="imgError2" class='order-relate-img'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 价格明细 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-bd'>价格明细</view>
+      </view>
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-doorstep.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>上门费</text>
+          <text>中国家用服务维修协会规定</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>15</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-urgent.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>加急费</text>
+          <text>用户自己添加</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>{{order.urgent / 100}}</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-maintenance.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>产品维修费</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>{{order.price / 100}}</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='total-price'>总费用
+          <span class='hl-price'>{{15 + order.urgent / 100 + order.price / 100}}</span>元</view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>订单号</view>
+        <view class='kind-list-bd'>{{order.orderNo}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>订单类型</view>
+        <view class='kind-list-bd'>{{order.title}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>下单时间</view>
+        <view class='kind-list-bd'>{{createTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>上门时间</view>
+        <view class='kind-list-bd'>{{bookTime1}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='hemptybox'></view>
+
+  <view class="high-bottom-box">
+    <view class="high-box-hd">
+      <view class='high-box-hd-txt'>
+        <view>
+          <span class='gray'>需支付</span>
+        </view>
+        <view>￥
+          <span>{{15 + order.urgent / 100 + order.price / 100}}</span>
+        </view>
+      </view>
+    </view>
+    <!-- <navigator url='../paysuccess/paysuccess' class='high-bottom-nav-r'>  -->
+    <view class="high-box-bd active" loading="{{loading}}">
+      <view class="high-bottom-btn-r">
+        <button bindtap='requestPayment' class='payBtn' disabled='{{payDisabled}}'>确定支付</button>
+      </view>
+    </view>
+    <!-- </navigator>  -->
+  </view>
+</view>

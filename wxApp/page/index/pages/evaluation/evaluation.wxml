@@ -1,0 +1,55 @@
+<view class='white-page'>
+  <view class='kind-list panel-padding'>
+    <view class='master-info'>
+      <view class='master-info-hd'>
+        <image src='../../../../images/master-portrait.jpg' ></image>
+      </view>
+      <view class='master-info-bd'>
+        <view>{{name}}师傅</view>
+        <view>
+          <block wx:for="{{stars}}" wx:key='index'>
+            <image class="star-image" style='margin-left:1px;' src="{{keys > item ?selectedSrc: normalSrc}}">
+            </image>
+          </block>
+        </view>
+      </view>
+      <view class='master-info-ft' bindtap='makePhoneCall'>
+        <!-- <button class='master-info-btn'>查看评价</button>  -->
+        <image src='../../../../images/dial.png'></image>
+        {{phone}}
+      </view>
+       
+    </view>
+  </view>
+
+  <view class="weui-loadmore weui-loadmore_line">
+    <span class="weui-loadmore__tips">匿名评价</span>
+  </view>
+
+  <view class='star-box kind-list'>
+  <block wx:for="{{stars}}" wx:key='index'>
+          <image class="star-image" style="margin-left: 10px" src="{{key > item ?selectedSrc: normalSrc}}">
+            <view class="item" data-key="{{item+1}}" bindtap="selectStar"></view>
+          </image>
+        </block>
+
+    <text wx:if="{{key>4}}" class='star-tip'>服务很好</text>
+    <text wx:elif="{{key>3}}" class='star-tip'>服务不错</text>
+    <text wx:elif="{{key>2}}" class='star-tip'>服务一般</text>
+    <text wx:elif="{{key>1}}" class='star-tip'>服务很差</text>
+    <text wx:elif="{{key>0}}" class='star-tip'>服务极差</text>
+    <text wx:else="{{key<=0}}" class='star-tip'></text>
+  </view>
+
+  <view class='kind-list panel-padding'>
+    <view class="evaluation-box">
+      <textarea class="weui-textarea" placeholder="说两句话吧" placeholder-style="color:#999" rows="3" bindinput='commentInput'></textarea> 
+    </view>
+  </view>
+
+  <view class='btn-area evaluation-btn'>
+    <!-- <navigator url='../evaluatesuccess/evaluatesuccess'> -->
+      <button class='primary-btn' bindtap='evaluate'>提交评价</button>
+    <!-- </navigator> -->
+  </view>
+</view>

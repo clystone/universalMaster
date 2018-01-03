@@ -1,0 +1,77 @@
+<view class='page'>
+  <view class='kind-list'>
+    <view class='panel-padding user-info'>
+      <view class='user-info-hd'>
+        <image src='{{order.user.headImgUrl}}'></image>
+      </view>
+      <view class='user-info-bd'>
+        <view>{{order.name}}</view>
+        <view class='user-info-time'>{{bookTime1}}</view>
+      </view>
+      <view class='user-info-ft'>
+        <button bindtap="kindToggle" class="{{showTxt ? '' : 'showBtn'}}">
+          <image src='../../resources/view-order.png'></image>
+        </button>
+      </view>
+    </view>
+    <view class="order-list {{showTxt ? 'order-list-show' : ''}}">
+      <view class='panel-padding'>
+        <view class='order-list-item'>
+          <view class='order-list-hd'>服务类型</view>
+          <view class='order-list-bd'>{{order.skill}}</view>
+        </view>
+        <view class='order-list-item'>
+          <view class='order-list-hd'>预约时间</view>
+          <view class='order-list-bd'>{{bookTime1}}</view>
+        </view>
+        <view class='order-list-item'>
+          <view class='order-list-hd'>联系方式</view>
+          <view class='order-list-bd'>
+            <text>{{order.provice}}{{order.city}}{{order.district}}{{order.addr}}\n{{order.name}}　{{order.phone}}</text>
+          </view>
+        </view>
+        <view class='divider'></view>
+        <view class='order-list-item'>
+          <view class='order-list-hd'>文字描述</view>
+          <view class='order-list-bd'>{{order.remark}}</view>
+        </view>
+        <view class='order-list-item' wx:if='{{showAudio}}'>
+          <view class='order-list-bd voice-box'>
+            <view class='kind-list-bd voice-box'>
+              <audio name="语音描述" author='' binderror="audioError" src="{{audioSrc}}" id="myAudio" controls></audio>
+            </view>
+          </view>
+        </view>
+        <view class='order-list-item' wx:if='{{showPic}}'>
+          <view class='order-list-hd'>相关图片</view>
+          <view class='kind-list-bd'>
+            <image src='{{imgSrc}}' binderror="imgError" class='order-relate-img'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='kind-list'>
+    <view class='panel-padding urgent-info'>
+      <view class='kind-list-bd'>
+        <view>填写加急费价格</view>
+        <view class='kind-list-bd-bd'>
+          <span>￥</span>
+          <input placeholder='0.0' class='price-input' placeholder-style='color:#ccc' type='number' bindinput='urgentMoney'></input>
+        </view>
+      </view>
+      <view class='kind-list-ft'>
+        <image src='../../../../images/order-urgent.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='urgent-tip'>加急费是订单的额外费用，请酌情填写</view>
+  <view class='btn-area evaluation-btn'>
+    <button class='primary-btn' bindtap="ensureUrgent">确定</button>
+    <!-- <navigator url='../booksuccess/booksuccess'>
+      <button class='primary-btn'>确定</button>
+    </navigator> -->
+  </view>
+</view>

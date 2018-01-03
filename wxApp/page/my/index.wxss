@@ -1,0 +1,34 @@
+/**index.wxss**/
+@import "../common/lib/weui.wxss";
+@import "../common/index.wxss";
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 148px;
+  background-color: #0087FE;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  display: block;
+}
+.gentInfoBtn {
+  color: #0087FE;
+}
+.userinfo-nickname {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.userInfo-box {
+  margin: auto;
+  text-align: center;
+}
+.list-box {
+  margin-top: 20rpx;
+}

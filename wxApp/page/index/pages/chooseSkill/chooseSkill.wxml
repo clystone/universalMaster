@@ -1,0 +1,9 @@
+<view class="skillContainer">
+  <view class="skillBox" wx:for="{{gooditems1}}" wx:key="id">
+    <view data-select="{{item.id}}" data-item-name="{{item.skill}}" class="{{item.id == itemSelect ? 'active':''}} boxItem" bindtap="chooseItem">
+      <!-- <view class='picBox'><image src='../../../../images/1.png' class='skillPic'></image></view> -->
+       <view class='picBox'><image src='https://shifu.jack-kwan.com/images/skill/{{item.id}}.jpg' class='skillPic'></image></view>
+      <text class='skillDes'>{{item.skill}}</text>
+    </view>
+  </view>
+</view>

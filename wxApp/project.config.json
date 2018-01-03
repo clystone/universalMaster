@@ -1,0 +1,71 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": false,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.0",
+	"appid": "wx500e955d86856a41",
+	"projectname": "%E7%94%A8%E6%88%B7%E7%AB%AF",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "新增订单",
+					"pathName": "page/index/pages/demand/demand",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系地址",
+					"pathName": "page/my/pages/contact/contact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "page/my/pages/contactinput/contactinput",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "加急页",
+					"pathName": "page/index/pages/urgent/urgent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新增地址页",
+					"pathName": "page/my/pages/contactinput/contactinput",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "newDemand",
+					"pathName": "page/index/pages/newDemand/newDemand",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "chooseSkill",
+					"pathName": "page/index/pages/chooseSkill/chooseSkill",
+					"query": ""
+				}
+			]
+		}
+	}
+}

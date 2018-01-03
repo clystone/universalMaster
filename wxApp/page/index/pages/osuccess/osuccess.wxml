@@ -1,0 +1,142 @@
+<view class='page'>
+  <view class='order-status-box'>
+    <image class='order-status-img' src='../../../../images/master-select.png'></image>
+    <view class='order-status-txt'>
+      <view class='strong'>下单成功!</view>
+      <view class='s-font'>系统正在为您挑选师傅 </view>
+    </view>
+  </view>
+
+  <!-- 加急 -->
+  <view class='kind-list'>
+    <view class='urgent-box'>
+      <navigator url='../urgent/urgent?orderId={{order.id}}' class='urgent-nav'>
+        <button class='warning-btn urgent-btn'>加急费</button>
+      </navigator>
+      <text class='urgent-tip xs-font'>太久没有师傅接单可以添加加急费提高接单率哦</text>
+    </view>
+  </view>
+
+  <!-- 订单详情 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>服务类型</view>
+        <view class='kind-list-bd'>{{order.skill}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>预约时间</view>
+        <view class='kind-list-bd'>{{bookTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>联系方式</view>
+        <view class='kind-list-bd'>
+          <text>{{order.provice}}{{order.city}}{{order.district}}{{order.addr}}\n{{order.name}}　{{order.phone}}</text>
+        </view>
+      </view>
+      <view class='divider'></view>
+      <view class='kind-list-item' wx:if='{{order.remark.length > 0}}'>
+        <view class='kind-list-hd'>文字描述</view>
+        <view class='kind-list-bd'>{{order.remark}}</view>
+      </view>
+      <view class='kind-list-item' wx:if='{{showAudio}}'>
+        <view class='kind-list-bd voice-box'>
+          <audio name="语音描述" author='' binderror="audioError" src="{{audioSrc}}" id="myAudio" controls></audio>
+        </view>
+      </view>
+      <block>
+        <view class='kind-list-item'>
+          <view class='kind-list-hd'>相关图片</view>
+          <view class='kind-list-bd'>
+            <image src='{{imgSrc}}' binderror="imgError" class='order-relate-img' bindtap='showBig' wx:if='{{showPic}}'></image>
+            <image src='{{imgSrc1}}' binderror="imgError1" class='order-relate-img' bindtap='showBig1' wx:if='{{showPic1}}'></image>
+            <image src='{{imgSrc2}}' binderror="imgError2" class='order-relate-img' bindtap='showBig2' wx:if='{{showPic2}}'></image>
+            <!-- <text wx:if="{{!(showPic||showPic1||showPic2)}}">无照片</text> -->
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+  <!-- 价格明细 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-bd'>价格明细</view>
+      </view>
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-doorstep.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>上门费</text>
+          <text>中国家用服务维修协会规定</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>15</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-maintenance.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>产品维修费</text>
+        </view>
+        <view class='price-list-ft'>等待师傅确定</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='total-price'>总费用
+          <span class='hl-price'>15</span>元</view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>订单号</view>
+        <view class='kind-list-bd'>{{order.orderNo}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>服务类型</view>
+        <view class='kind-list-bd'>{{order.title}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>下单时间</view>
+        <view class='kind-list-bd'>{{createTime1}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='hemptybox'></view>
+
+  <view class="high-bottom-box">
+    <!-- <navigator url='' class='high-bottom-nav-l'>    -->
+    <view class="high-box-hd" bindtap='showWarningModal'>
+      <view class='high-box-hd-txt high-bottom-btn-l'>
+        <view class='high-box-hd-img'>
+          <image src='../../resources/cancel-order.png'></image>
+        </view>
+        <view>
+          <span class='gray'>取消订单</span>
+        </view>
+        <!-- <view>￥<span>135.0</span></view>  -->
+      </view>
+    </view>
+    <!-- </navigator> -->
+
+
+    <!-- <navigator url='' class='high-bottom-nav-r'> -->
+    <view class="high-box-bd">
+      <view class="high-bottom-btn-r">
+        <text>确认订单\n</text>
+        <text class='hign-btn-tip'>(等待师傅接单中)</text>
+      </view>
+    </view>
+    <!-- </navigator> -->
+
+  </view>
+</view>

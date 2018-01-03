@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="page">
+  <view class='panel-padding'>
+    <view class="navbar-item" wx:for="{{count}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="changeSelected">
+      <view class="contact-box {{currentItem==idx ? 'active' : ''}}" bindtap='changeSelected'>
+      <view class='contact-panel'>
+        <view class='contact-name l-font'>
+          <text class='strong'>请填写</text>
+          <view class='contact-img-box'><image class='contact-img-phone' src='../../../../images/phone.png'></image></view>
+          <text class='userphone'>131-0000-0000</text>
+        </view>
+        <view class='contact-address'>
+          <view class='contact-img-box'><image class='contact-img-address' src='../../../../images/position.png'></image></view>
+          <text class='contact-desc'>广东省广州市萝岗区联和街道彩频路6号凡岛2号楼2楼F0</text>
+        </view>
+        <view class='contact-btn-box'>
+          <view class='contact-btn contact-btn-del' bindtap='delItem'>删除</view>
+          <view class='contact-btn contact-btn-edit'>
+            <navigator url='../contactinput/contactinput' hover-class='none'>编辑</navigator> 
+          </view>        
+        </view>
+      </view>
+      </view>
+    </view>
+  </view>
+
+  <navigator url='../contactinput/contactinput'>
+  <view class="low-bottom-box">    
+     <button class="low-bottom-btn">新增联系方式</button>
+  </view>
+  </navigator>
+</view>
