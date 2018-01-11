@@ -52,23 +52,10 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
-    // wx.getSetting({
-    //   success(res) {
-    //     if (!res.authSetting['scope.record']) {
-    //       wx.authorize({
-    //         scope: 'scope.record',
-    //         success() {
-    //           // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-    //           // wx.startRecord()
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
     console.log(options)
     let that = this;
     this.setData({
-      currentSkill: options.currentSkill
+      currentSkill: options.currentSkill,
     })
   },
   onShow: function () {
@@ -110,7 +97,6 @@ Page({
         }
       })
     }
-
     var time1 = util.formatTime1(new Date());
     var timeStamp1 = Date.parse(time1);
     var day1 = util.formatMyTime(new Date());
@@ -161,25 +147,6 @@ Page({
       timeStamp1: timeStamp1,
     });
 
-    //获取服务类型
-    wx.request({
-      url: app.globalData.url + '/api/skill/findAll/1001',
-      method: 'GET',
-      data: {},
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data.parms.skill)
-        that.setData({
-          gooditems1: res.data.parms.skill
-        })
-        console.log(that.data.gooditems1)
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
     //获取地址
     wx.request({
       url: app.globalData.url + '/api/user/findAddr',
@@ -211,52 +178,36 @@ Page({
               addr1: that.data.userAddresses[i].addr,
               hasDefault: true
             })
-            // var currentId1 = that.data.userAddresses[i].id;
           }
-          // else{
-          //   wx.redirectTo({
-          //     url: '../contact/contact',
-          //   })
-          // }
-
         }
-
-        if (!that.data.hasDefault) {
-          console.log(111)
-          wx.redirectTo({
-            url: '../contactinput/contactinput',
-          })
-        }
-        else if (!that.data.currentSkill) {
-          wx.redirectTo({
-            url: '../chooseSkill/chooseSkill',
-          })
-        }
-        // else {
-        //   wx.redirectTo({
-        //     url: '../contactinput/contactinput',
-        //   })
-        // }
-
         console.log(that.data.currentId1)
       },
       fail: err => {
         console.log(err)
-      },
-      complete: function () {
-        // if (!that.data.hasDefault) {
-        //   console.log(111)
-        //   wx.redirectTo({
-        //     url: '../contactinput/contactinput',
-        //   })
-        // }
-        // else if (!that.data.currentSkill){
-        //   wx.redirectTo({
-        //     url: '../chooseSkill/chooseSkill',
-        //   })
-        // }
       }
+    
     })
+
+    //获取服务类型
+    // wx.request({
+    //   url: app.globalData.url + '/api/skill/findAll/1001',
+    //   method: 'GET',
+    //   data: {},
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data.parms.skill)
+    //     that.setData({
+    //       gooditems1: res.data.parms.skill
+    //     })
+    //     console.log(that.data.gooditems1)
+    //   },
+    //   fail: function (err) {
+    //     console.log(err)
+    //   }
+    // })
+    
   },
   toChooseSkill: function () {
     wx.redirectTo({
@@ -783,15 +734,30 @@ Page({
     wx.stopVoice()
   },
   clear: function () {
-    clearInterval(playTimeInterval)
-    wx.stopVoice()
-    this.setData({
-      playing: false,
-      hasRecord: false,
-      tempFilePath: '',
-      formatedRecordTime: util.ft(0),
-      recordTime: 0,
-      playTime: 0
+    var that = this
+    wx.showModal({
+      title: '删除录音',
+      content: '是否删除该录音，重新录制',
+      confirmText: '是',
+      cancelText: '否',
+      confirmColor: 'green',
+      cancelColor: 'red',
+      success: function (res) {
+        if (res.confirm) {
+          clearInterval(playTimeInterval)
+          wx.stopVoice()
+          that.setData({
+            playing: false,
+            hasRecord: false,
+            tempFilePath: '',
+            formatedRecordTime: util.ft(0),
+            recordTime: 0,
+            playTime: 0
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
   },
   chooseImage1: function () {

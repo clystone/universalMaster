@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="userinfo">
+    <view class='userInfo-box' wx:if="{{!hasUserInfo && canIUse}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='gentInfoBtn'> 获取头像昵称 </button>
+    </view>
+    <block wx:else>
+    <view class='userInfo-box'>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    </block>
+  </view>
+  <view class='list-box'>
+    <view class="weui-cells">
+
+            <navigator class="weui-cell weui-cell_access" url='pages/contact/contact'>
+                <view class="weui-cell__hd">
+                  <image src="resources/phone-square.png" alt="" style="width:15px;height:15px;margin-right:5px;display:block"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <text>联系方式</text>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </navigator>
+            <view class="weui-cell weui-cell_access" bindtap='makePhoneCall'>
+                <view class="weui-cell__hd">
+                  <image src="resources/complaint.png" alt="" style="width:15px;height:15px;margin-right:5px;display:block"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <text>我要投诉</text>
+                </view>
+                <view class="weui-cell__ft">400-600-3388</view>
+            </view>
+        </view>
+  </view>
+  <view class='btn-area'>
+    <navigator url=''>
+      <button class='primary-btn'>退出登录</button>
+    </navigator>
+  </view>
+</view>

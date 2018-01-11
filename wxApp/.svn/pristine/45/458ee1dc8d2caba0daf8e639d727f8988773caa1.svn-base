@@ -1,0 +1,60 @@
+var app = getApp()
+Page({
+  data: {
+    navbar: ['待接单', '进行中','已完成'],
+    currentNavbar: '0',
+  },
+  /**
+   * 切换 navbar
+   */
+  swichNav(e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+  },
+  showChangeModal: function () {
+    wx.showModal({
+      title: '确定更换师傅吗',
+      confirmColor: '#0087fe',
+      content: '若在师傅接单10分钟后更换师傅将收取一定的服务费，是否确定？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  showWarningModal: function () {
+    wx.showModal({
+      title: '确定取消订单吗',
+      confirmColor: '#0087fe',
+      content: '师傅接单10分钟后取消订单将收取一定的服务费，是否确定取消？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  showConfirmModal: function () {
+    wx.showModal({
+      title: '是否确认订单',
+      confirmColor: '#0087fe',
+      confirmText: '已完成',
+      content: '师傅已完成上门服务',
+      success: function (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../servicecomplete/servicecomplete',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+})

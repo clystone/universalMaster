@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="page">
+  <view class='logo-box1'>
+    <view style='height:200px;'>
+      <image class='logo-image' src='resources/logo.png'></image>
+      <view class='logo-title strong'>全能师傅　为家服务</view>
+      <view class='logo-desc pt20'>Universal Master Serves The Home</view>
+    </view>
+
+    <!-- <view class='logo-desc pt60'>限时：关注公众号 "全能师傅一家修" 领取10元代金券</view> -->
+    <view style='height:100px;width:100%;'>
+      <image src='resources/line.png' class='linePic'></image>
+    </view>
+  </view>
+  <view class='index-bd'>
+    <view class='kind-list'>
+      <navigator url='pages/newDemand/newDemand'>
+        <view class='kind-list-item'>
+          <view class='kind-list-item-left ml10'>
+            <view class='kind-list-item-title strong xl-font'>
+              <text class='colorMain fs22'>全能维修　随时响应</text>
+            </view>
+            <view class='kind-list-item-desc xs-font strong'>
+              <text class='rem1'>All Mainternance,better and faster</text>
+            </view>
+            <view class='kind-list-item-desc s-font strong'>
+              <text class='color555 pt5'>全国热线：400-600-3388</text>
+            </view>
+            <!-- <view class='kind-list-item-tips strong'>
+              <text>Universal Master</text>
+            </view> -->
+          </view>
+
+          <image class='kind-list-item-img1' src='resources/click.png'></image>
+
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- <navigator url='pages/newDemand/newDemand'>
+  <button type="primary">测试新订单</button>
+</navigator> -->
+<loading hidden="{{complete}}">
+  <text style='display:block'>加载中... </text>
+  <!-- <text class='fs12'>(若微信版本过低,可能无法使用)</text> -->
+</loading>

@@ -1,0 +1,579 @@
+<view class="page">
+  <!-- <view class="scrool-left">
+    <image class='leftArrow' src='resources/leftArrow.png' wx:if="{{showLeft}}"></image>
+    <image class='rightArrow' src='resources/rightArrow.png' wx:if="{{showRight}}"></image>
+    <scroll-view scroll-x="true" style="white-space: nowrap; display: block" class="showmian" bindscrolltoupper="leftArrow" bindscrolltolower="rightArrow" bindscroll="showAll">
+
+      <view class="navbar-item w25" wx:for="{{navbar}}" wx:key="index" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+        <text class="l-font navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+      </view>
+
+    </scroll-view>
+  </view> -->
+  <!-- <view class="navbar">
+    <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+      <text class="l-font navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+    </view>
+  </view>  -->
+
+  <!-- 全部 -->
+  <view wx:if="{{currentNavbar==0}}" class='order-list'>
+    <!-- <view class='orderTitBox'>
+      <text class='orderTit'>进行中</text>
+    </view> -->
+    <view wx:for="{{orders}}" wx:key="index" wx:for-item='item'>
+      <view class='orderBox' wx:if="{{item.state == 1}}">
+        <view class='order-item-hd'>
+          <navigator url="../index/pages/osuccess/osuccess?orderId={{item.id}}" hover-class='none' style="display:inherit">
+            <view class='createTime'>
+              <text class='blBlue'></text>预约时间：{{times[index]}}
+            </view>
+            <view class='order-item-top'>
+              <image class='order-img ml10' src='../../images/master-wait.png'></image>
+              <view class='order-user-info'>
+                <text class='colorCCC'>待师傅接单中</text>
+              </view>
+              <text class='order-status mr10'>下单成功</text>
+            </view>
+            <view class='order-item-mid tac'>
+              <view class='pt10 fs24'>{{item.skill}}</view>
+              <view class='fs36'>￥{{item.tolls/100 + item.urgent/100}}</view>
+              <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 待确定</view>
+            </view>
+          </navigator>
+          <view class='order-item-bot'>
+            <view class='flex1 colorAAA borderRight borderLeft' data-orderid='{{item.id}}' bindtap='showWarningModal'>取消订单</view>
+            <view class='flex1 colorBlue borderRight'>
+              <navigator url='../index/pages/urgent/urgent?orderId={{item.id}}' hover-class="hl-navigator-hover" style='display:inherit'>加急</navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='orderBox' wx:if="{{item.state == 2}}">
+        <view class='order-item-hd'>
+          <navigator url='../index/pages/booksuccess/booksuccess?orderId={{item.id}}&masterId={{item.master.id}}' hover-class='none' style="display:inherit">
+            <view class='createTime'>
+              <text class='blBlue'></text>预约时间：{{times[index]}}
+            </view>
+            <view class='order-item-top'>
+              <image class='order-img ml10' src='../../images/master-portrait.jpg'></image>
+              <view class='order-user-info'>
+                <text>{{item.master.realName}}师傅</text>
+              </view>
+              <text class='order-status mr10'>预约成功</text>
+            </view>
+            <view class='order-item-mid tac'>
+              <view class='pt10 fs24'>{{item.skill}}</view>
+              <view class='fs36'>￥{{item.tolls/100 + item.urgent/100}}</view>
+              <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 待确定</view>
+            </view>
+          </navigator>
+          <view class='order-item-bot'>
+            <view class='flex1 colorAAA borderRight borderLeft' bindtap='showChangeModal' data-orderid='{{item.id}}'>更换师傅</view>
+            <!-- <view class='flex1 colorAAA borderRight' data-orderid='{{item.id}}' bindtap='showWarningModal'>取消订单</view> -->
+            <view class='flex1 colorBlue borderRight' bindtap='showConfirmModal' data-orderid='{{item.id}}'>确认师傅已到达</view>
+          </view>
+        </view>
+      </view>
+      <navigator url='../index/pages/toBeDecided/toBeDecided?orderId={{item.id}}&masterId={{item.master.id}}' hover-class='none' style="display:inherit">
+      <view class='orderBox' wx:if="{{item.state == 3}}">
+        <view class='order-item-hd'>
+          <view class='createTime'>
+            <text class='blBlue'></text>预约时间：{{times[index]}}
+          </view>
+          <view class='order-item-top'>
+            <image class='order-img ml10' src='../../images/master-portrait.jpg'></image>
+            <view class='order-user-info'>
+              <text>{{item.master.realName}}师傅</text>
+            </view>
+            <text class='order-status mr10'>待确认价格</text>
+          </view>
+          <view class='order-item-mid tac'>
+            <view class='pt10 fs24'>{{item.skill}}</view>
+            <view class='fs36'>￥{{item.tolls/100 + item.urgent/100}}</view>
+            <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 30元</view>
+          </view>
+
+          <view class='order-item-bot'>
+            <view class='flex1 colorCCC borderRight borderLeft'>等待师傅确认价格后支付</view>
+          </view>
+        </view>
+      </view>
+      </navigator>
+      <view class='orderBox' wx:if="{{item.state == 4}}">
+        <view class='order-item-hd'>
+          <navigator url='../index/pages/servicecomplete/servicecomplete?orderId={{item.id}}&masterId={{item.master.id}}' hover-class='none' style="display:inherit">
+            <view class='createTime'>
+              <text class='blBlue'></text>预约时间：{{times[index]}}
+            </view>
+            <view class='order-item-top'>
+              <image class='order-img ml10' src='../../images/master-portrait.jpg'></image>
+              <view class='order-user-info'>
+                <text>{{item.master.realName}}师傅</text>
+              </view>
+              <text class='order-status mr10'>待支付</text>
+            </view>
+            <view class='order-item-mid tac'>
+              <view class='pt10 fs24'>{{item.skill}}</view>
+              <view class='fs36'>￥{{item.tolls/100 + item.urgent/100 + item.price/100}}</view>
+              <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 {{item.price/100}}元</view>
+            </view>
+          </navigator>
+          <view class='order-item-bot'>
+            <view class='flex1 colorBlue borderRight borderLeft' bindtap='showPayModal' data-orderid='{{item.id}}' data-masterid='{{item.master.id}}'>去支付</view>
+          </view>
+        </view>
+      </view>
+      <navigator url='../index/pages/ocomplete/ocomplete?orderId={{item.id}}&masterId={{item.master.id}}' hover-class='none' style="display:inherit">
+        <view class='orderBox' wx:if="{{item.state == 5}}">
+          <view class='order-item-hd'>
+            <view class='createTime'>
+              <text class='blBlue'></text>预约时间：{{times[index]}}
+            </view>
+            <view class='order-item-top'>
+              <image class='order-img ml10' src='../../images/master-portrait.jpg'></image>
+              <view class='order-user-info'>
+                <text>{{item.master.realName}}师傅</text>
+              </view>
+              <text class='colorCCC mr10'>服务完成</text>
+            </view>
+            <view class='order-item-mid tac'>
+              <view class='pt10 fs24'>{{item.skill}}</view>
+              <view class='fs36'>￥{{item.tolls/100 + item.urgent/100 + item.price/100}}</view>
+              <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 {{item.price/100}}元</view>
+            </view>
+            <view class='order-item-bot'>
+              <view class='flex1 colorBlue borderRight borderLeft'>评价详情</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class='orderBox' wx:if="{{item.state == 0}}">
+        <view class='order-item-hd'>
+          <view class='createTime'>
+            <text class='blBlue'></text>预约时间：{{times[index]}}
+          </view>
+          <view class='order-item-top'>
+            <image class='order-img ml10' src='../../images/master-wait.png'></image>
+            <view class='order-user-info'>
+              <text>暂无师傅</text>
+            </view>
+            <text class='colorCCC mr10'>已取消</text>
+          </view>
+          <view class='order-item-mid tac'>
+            <view class='pt10 fs24'>{{item.skill}}</view>
+            <view class='fs36'>￥{{item.tolls/100 + item.urgent/100}}</view>
+            <view class='fs12 colorCCC pb15'>上门费 {{item.tolls/100}}元 - 加急费 {{item.urgent/100}}元 - 产品维修费 30元</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class='orderTitBox'>
+      <text class='orderTit'>已完成</text>
+    </view> -->
+    <!-- <view wx:for="{{orders1}}"  wx:for-item='item1'> 
+    
+    <navigator url='../index/pages/ocomplete/ocomplete?orderId={{item.id}}&masterId={{item.master.id}}' hover-class='none' style="display:inherit">
+      <view class='orderBox' wx:if="{{item.state == 5}}">
+        <view class='order-item-hd'>
+          <view class='order-item-top'>
+            <image class='order-img ml10' src='../../images/master-portrait.jpg'></image>
+            <view class='order-user-info'>
+              <text>{{item1.master.realName}}师傅</text>
+            </view>
+            <text class='colorCCC mr10'>服务完成</text>
+          </view>
+          <view class='order-item-mid tac'>
+            <view class='pt10'>{{item1.skill}}</view>
+            <view class='fs36'>￥{{item1.tolls/100 + item1.urgent/100 + item1.price/100}}</view>
+            <view class='fs12 colorCCC pb15'>上门费 {{item1.tolls/100}}元 - 加急费 {{item1.urgent/100}}元 - 产品维修费 {{item1.price/100}}元</view>
+          </view>
+          <view class='order-item-bot'>
+            <view class='flex1 colorBlue borderRight borderLeft'>评价详情</view>
+          </view>
+        </view>
+      </view>
+      </navigator>
+      <view class='orderBox' wx:if="{{item.state == 0}}">
+        <view class='order-item-hd'>
+          <view class='order-item-top'>
+            <image class='order-img ml10' src='../../images/master-wait.png'></image>
+            <view class='order-user-info'>
+              <text>暂无师傅</text>
+            </view>
+            <text class='colorCCC mr10'>已取消</text>
+          </view>
+          <view class='order-item-mid tac'>
+            <view class='pt10'>{{item1.skill}}</view>
+            <view class='fs36'>￥{{item1.tolls/100 + item1.urgent/100}}</view>
+            <view class='fs12 colorCCC pb15'>上门费 {{item1.tolls/100}}元 - 加急费 {{item1.urgent/100}}元 - 产品维修费 30元</view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+
+  <!-- 待接单 -->
+  <!-- <scroll-view bindscrolltolower="searchScrollLower"  scroll-y="true" class="h100"> -->
+
+  <!-- <view wx:if="{{currentNavbar==1}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view> -->
+  <!-- <view class='order-list-item' wx:for="{{orders}}" wx:key="index">
+      <view class='order-item-hd'>
+        <navigator url="../index/pages/osuccess/osuccess?orderId={{item.id}}" hover-class='none'>
+          <image class='order-img-s' src='../../images/master-wait.png'></image>
+          <view class='order-user-info'>
+            <text>等待接单中</text>
+          </view>
+          <text class='order-status'>订单详情</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <navigator url="../index/pages/osuccess/osuccess?orderId={{item.id}}" hover-class='none'>
+          <view class='kind-list'>
+            <view class='kind-list-item'>
+              <view class='kind-list-hd'>
+                <image class='other-icon' src='resources/other.png'></image>
+              </view>
+              <view class='kind-list-bd'>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label service-type">{{item.skill}}</label>
+                    <text class="weui-form-preview__value total-price"></text>
+                  </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">上门费</label>
+                    <text class="weui-form-preview__value">￥15</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">加急费</label>
+                    <text class="weui-form-preview__value">￥{{item.urgent / 100}}</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">产品维修费</label>
+                    <text class="weui-form-preview__value">待确定</text>
+                  </view>
+
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+      <view class='order-item-ft'>
+        <view class='order-item-btn' hover-class="navigator-hover" data-orderid='{{item.id}}' bindtap='showWarningModal'>取消订单</view>
+        <view class='order-item-btn main-btn'>
+          <navigator url='../index/pages/urgent/urgent?orderId={{item.id}}' hover-class="hl-navigator-hover">加急</navigator>
+        </view>
+      </view>
+
+    </view>
+  </view> -->
+
+  <!-- </scroll-view> -->
+  <!-- 已接单 -->
+  <!-- <view wx:if="{{currentNavbar==2}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view>
+    
+    <view class='order-list-item' wx:for="{{orders}}" wx:key="index" wx:for-item='item1'>
+      <view class='order-item-hd'>
+        <navigator url='../index/pages/booksuccess/booksuccess?orderId={{item1.id}}&masterId={{item1.master.id}}' hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>{{item1.master.realName}}</text>
+            
+          </view>
+          <text class='order-status'>订单详情</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <navigator url='../index/pages/booksuccess/booksuccess?orderId={{item1.id}}&masterId={{item1.master.id}}' hover-class='none'>
+          <view class='kind-list'>
+            <view class='kind-list-item'>
+              <view class='kind-list-hd'>
+                <image class='other-icon' src='resources/other.png'></image>
+              </view>
+              <view class='kind-list-bd'>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label service-type">{{item1.skill}}</label>
+                    <text class="weui-form-preview__value total-price"></text>
+                  </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">上门费</label>
+                    <text class="weui-form-preview__value">￥15</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">加急费</label>
+                    <text class="weui-form-preview__value">￥{{item1.urgent/100}}</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">产品维修费</label>
+                    <text class="weui-form-preview__value">待确定</text>
+                  </view>
+
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+      <view class='order-item-ft'>
+        <view class='order-item-btn' hover-class="navigator-hover" bindtap='showChangeModal' data-orderid='{{item1.id}}'>更换师傅</view>
+       
+        <view class='order-item-btn main-btn' hover-class="hl-navigator-hover" bindtap='showConfirmModal' data-orderid='{{item1.id}}'>确认上门
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 确定上门 -->
+  <!-- <view wx:if="{{currentNavbar==3}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view>
+    <view class='order-list-item' wx:for="{{orders}}" wx:key="index" wx:for-item='item2'>
+      <view class='order-item-hd'>
+        <navigator hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>{{item2.master.realName}}</text>
+           
+          </view>
+          <text class='order-status'></text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <view class='kind-list'>
+          <view class='kind-list-item'>
+            <view class='kind-list-hd'>
+              <image class='other-icon' src='resources/other.png'></image>
+            </view>
+            <view class='kind-list-bd'>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label service-type">{{item2.skill}}</label>
+                  <text class="weui-form-preview__value total-price"></text>
+                </view>
+              </view>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">上门费</label>
+                  <text class="weui-form-preview__value">￥15</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">加急费</label>
+                  <text class="weui-form-preview__value">￥{{item2.urgent/100}}</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">产品维修费</label>
+                  <text class="weui-form-preview__value">待确认</text>
+                </view>
+
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view class='order-item-ft'>
+        <view data-orderid='{{item2.id}}'>待师傅确认价格
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 确定价格 -->
+  <!-- <view wx:if="{{currentNavbar==4}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view>
+    <view class='order-list-item' wx:for="{{orders}}" wx:key="index" wx:for-item='item3'>
+      <view class='order-item-hd'>
+        <navigator url='../index/pages/servicecomplete/servicecomplete?orderId={{item3.id}}&masterId={{item3.master.id}}' hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>{{item3.master.realName}}</text>
+          </view>
+          <text class='order-status'>订单详情</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <navigator url='../index/pages/servicecomplete/servicecomplete?orderId={{item3.id}}&masterId={{item3.master.id}}' hover-class='none'>
+          <view class='kind-list'>
+            <view class='kind-list-item'>
+              <view class='kind-list-hd'>
+                <image class='other-icon' src='resources/other.png'></image>
+              </view>
+              <view class='kind-list-bd'>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label service-type">{{item3.skill}}</label>
+                    <text class="weui-form-preview__value total-price"></text>
+                  </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">上门费</label>
+                    <text class="weui-form-preview__value">￥15</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">加急费</label>
+                    <text class="weui-form-preview__value">￥{{item3.urgent/100}}</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">产品维修费</label>
+                    <text class="weui-form-preview__value">￥{{item3.price/100}}</text>
+                  </view>
+
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </navigator>
+      </view>
+      <view class='order-item-ft'>
+        <view class='order-item-btn main-btn' hover-class="hl-navigator-hover" bindtap='showPayModal' data-orderid='{{item3.id}}' data-masterid='{{item3.master.id}}'>去支付
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 已完成 -->
+  <!-- <view wx:if="{{currentNavbar==5}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view>
+    <view class='order-list-item' wx:for="{{orders}}" wx:key="index" wx:for-item='item4'>
+      <view class='order-item-hd'>
+        <navigator url='../index/pages/ocomplete/ocomplete?orderId={{item4.id}}&masterId={{item4.master.id}}' hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>{{item4.master.realName}}</text>
+            
+          </view>
+          <text class='order-status'>订单详情</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <navigator url='../index/pages/ocomplete/ocomplete?orderId={{item4.id}}&masterId={{item4.master.id}}' hover-class='none'>
+          <view class='kind-list'>
+            <view class='kind-list-item'>
+              <view class='kind-list-hd'>
+                <image class='other-icon' src='resources/other.png'></image>
+              </view>
+              <view class='kind-list-bd'>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label service-type">{{item4.skill}}</label>
+                    
+                  </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">上门费</label>
+                    <text class="weui-form-preview__value">￥15</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">加急费</label>
+                    <text class="weui-form-preview__value">￥{{item4.urgent}}</text>
+                  </view>
+                  <view class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">产品维修费</label>
+                    <text class="weui-form-preview__value">￥{{item4.price/100}}</text>
+                  </view>
+
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class='order-item-ft'>
+        <view class='order-item-btn main-btn'>
+          <navigator url='../index/pages/ocomplete/ocomplete?orderId={{item4.id}}&masterId={{item4.master.id}}' hover-class="hl-navigator-hover" data-orderid='{{item4.id}}'> 去评价</navigator>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 已取消 -->
+  <!-- <view wx:if="{{currentNavbar==6}}" class='order-list'>
+    <view wx:if="{{!orders.length}}" class='tac'>
+      <icon type="info" size="80" class='mt20' />
+      <view class="mt10">暂无此状态订单!!!</view>
+    </view>
+    <view class='order-list-item cancel-box' wx:for="{{orders}}" wx:key="index" wx:for-item='item5'>
+      <view class='order-item-hd'>
+        <navigator url='' hover-class='none'>
+          <image class='order-img' src='../../images/master-portrait.jpg'></image>
+          <view class='order-user-info'>
+            <text>{{item5.master.realName}}</text>
+            
+          </view>
+          <text class='order-status cancel-status'>已取消</text>
+        </navigator>
+      </view>
+      <view class='order-item-bd'>
+        <view class='kind-list'>
+          <view class='kind-list-item'>
+            <view class='kind-list-hd'>
+              <image class='other-icon' src='resources/other.png'></image>
+            </view>
+            <view class='kind-list-bd'>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label service-type">{{item5.skill}}</label>
+                  <text class="weui-form-preview__value total-price"></text>
+                </view>
+              </view>
+              <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">上门费</label>
+                  <text class="weui-form-preview__value">￥15</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">加急费</label>
+                  <text class="weui-form-preview__value">￥{{item5.urgent/100}}</text>
+                </view>
+                <view class="weui-form-preview__item">
+                  <label class="weui-form-preview__label">产品维修费</label>
+                  <text class="weui-form-preview__value">待确定</text>
+                </view>
+
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+</view>
+
+<!-- <view class="tips1">
+  <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+    <icon type="waiting" size="20" />
+    <text>玩命的加载中...</text>
+  </view>
+  <view wx:else>
+    <text>没有更多内容了</text>
+  </view>
+</view> -->

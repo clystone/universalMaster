@@ -1,0 +1,79 @@
+/* page/my/pages/contact/contact.wxss */
+@import "../../../common/index.wxss";
+.contact-box {
+  z-index: 1;
+  margin: 0 0 30rpx 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow:0 2px 4px #eeeeee;
+  /* border-left: 4px solid #fff; */
+}
+.contact-box.active {
+  border-left: 4px solid #0087FE;
+}
+.contact-panel {
+  padding: 30rpx 30rpx 0;
+}
+.contact-name {
+  margin: 10rpx 0 20rpx;
+  color: #363636;
+  display: flex;
+  align-items: center;
+}
+.contact-img-box {
+  display: flex;
+  align-items: center;
+}
+.contact-img-phone{
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.select-list-item-icon,.contact-img-address{
+  width: 16px;
+  height: 16px;
+  margin: auto 5px auto 0;
+}
+.contact-img-phone {
+  margin: auto 5px auto 10px;
+}
+.userphone {
+  color: #505050;
+  font-size: 16px;
+}
+.contact-address {
+ display: flex;
+}
+.contact-desc {
+  color: #999;
+  flex: 1;
+}
+.contact-btn-box {
+  text-align: center;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.contact-btn {
+  width: 50%;
+  display: inline-block;
+}
+.contact-btn-del {
+  color: #999;
+}
+.contact-btn-edit {
+  color: #0087FE;
+}
+
+.defAddr{
+  border: 1px solid #fff;
+  background-color: #0087FE;
+  padding: 0 5px; 
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 20px;
+  display: none
+}
+.defAddr.active{
+  display: block
+}

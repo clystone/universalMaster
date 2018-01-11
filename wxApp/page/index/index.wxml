@@ -14,7 +14,7 @@
   </view>
   <view class='index-bd'>
     <view class='kind-list'>
-      <navigator url='pages/newDemand/newDemand'>
+      <navigator url='pages/judge/judge'>
         <view class='kind-list-item'>
           <view class='kind-list-item-left ml10'>
             <view class='kind-list-item-title strong xl-font'>
@@ -24,7 +24,7 @@
               <text class='rem1'>All Mainternance,better and faster</text>
             </view>
             <view class='kind-list-item-desc s-font strong'>
-              <text class='color555 pt5'>全国热线：400-600-3388</text>
+              <text class='color555 pt5'>服务热线：400-600-3388</text>
             </view>
             <!-- <view class='kind-list-item-tips strong'>
               <text>Universal Master</text>

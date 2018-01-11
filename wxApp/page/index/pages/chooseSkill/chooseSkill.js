@@ -13,6 +13,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    })
     //获取服务类型
     wx.request({
       url: app.globalData.url + '/api/skill/findAll/1001',

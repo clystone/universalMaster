@@ -139,9 +139,14 @@ Page({
             })
           },
           'fail': function (err) {
-            // wx.switchTab({
-            //   url: '../../../order/index',
-            // })
+            wx.request({
+              url: app.globalData.url + '/api/pay/con/' + that.data.orderId,
+              method: 'POST',
+              header: { TOKEN: app.globalData.token },
+              success: function (res) {
+                console.log(res)
+              },
+            })
             console.log(err);
             that.setData({
               payDisabled: false

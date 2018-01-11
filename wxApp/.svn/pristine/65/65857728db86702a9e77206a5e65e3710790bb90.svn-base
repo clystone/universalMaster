@@ -1,0 +1,152 @@
+<!--page/index/pages/ocomplete/ocomplete.wxml-->
+<view class='page'>
+  <view class='order-status-box'>
+    <image class='order-status-img-s' src='../../../../images/order-complete.png'></image>
+    <view class='order-status-txt'>
+      <view class='strong'>订单已完成</view>
+    </view>
+  </view>
+
+  <!-- 师傅 -->
+  <view class='kind-list'>
+    <view class='panel-padding master-info'>
+      <view class='master-info-hd'>
+        <image src='../../../../images/master-portrait.jpg'></image>
+      </view>
+      <view class='master-info-bd'>
+        <view>{{order.master.realName}}师傅</view>
+        <view>
+          <block wx:for="{{stars}}" wx:key='index'>
+            <image class="star-image" style='margin-left:1px;' src="{{keys > item ?selectedSrc: normalSrc}}">
+            </image>
+          </block>
+        </view>
+      </view>
+      <view class='master-info-ft border-none'>
+        <navigator url='../evaluatesuccess/evaluatesuccess?orderId={{order.id}}&masterId={{order.master.id}}&masterPhone={{order.master.phone}}&masterName={{order.master.realName}}'>
+          <button class='master-info-btn' wx:if='{{commentState==1}}'>查看评价</button>
+        </navigator>
+        <navigator url='../evaluation/evaluation?orderId={{order.id}}&masterId={{order.master.id}}&masterPhone={{order.master.phone}}&masterName={{order.master.realName}}'>
+          <button class='master-info-btn' wx:if='{{commentState==0}}'>评价</button>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 订单详情 -->
+  <view class='kind-list'>
+    <view class='complainBox' bindtap='makePhoneCall1'>
+      <image class='complainPic' src='../../../../images/complain.png'></image>
+      <text class='complainText'>我要投诉</text>
+    </view>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>服务类型</view>
+        <view class='kind-list-bd'>{{order.skill}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>预约时间</view>
+        <view class='kind-list-bd'>{{bookTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>联系方式</view>
+        <view class='kind-list-bd'>
+          <text>{{order.provice}}{{order.city}}{{order.district}}{{order.addr}}\n{{order.name}}　{{order.phone}}</text>
+        </view>
+      </view>
+      <view class='divider'></view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>文字描述</view>
+        <view class='kind-list-bd'>{{order.remark}}</view>
+      </view>
+      <view class='kind-list-item' wx:if='{{showAudio}}'>
+        <view class='kind-list-bd voice-box'>
+          <audio name="语音描述" author='' binderror="audioError" src="{{audioSrc}}" id="myAudio" controls></audio>
+        </view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>相关图片</view>
+        <view class='kind-list-bd'>
+          <image src='{{imgSrc}}' wx:if='{{showPic}}' binderror="imgError" class='order-relate-img'></image>
+          <image src='{{imgSrc1}}' wx:if='{{showPic1}}' binderror="imgError1" class='order-relate-img'></image>
+          <image src='{{imgSrc2}}' wx:if='{{showPic2}}' binderror="imgError2" class='order-relate-img'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 价格明细 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-bd'>价格明细</view>
+      </view>
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-doorstep.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>上门费</text>
+          <text>中国家用服务维修协会规定</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>15</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-urgent.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>加急费</text>
+          <text>用户自己添加</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>{{order.urgent / 100}}</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='price-list-hd'>
+          <image class='price-img' src='../../../../images/order-maintenance.png'></image>
+        </view>
+        <view class='price-list-bd'>
+          <text class='price-txt-title'>产品维修费</text>
+        </view>
+        <view class='price-list-ft'>
+          <span class='hl-price'>{{order.price / 100}}</span>元</view>
+      </view>
+
+      <view class='kind-list-item price-list-item'>
+        <view class='total-price'>总费用
+          <span class='hl-price'>{{order.urgent / 100 + order.price / 100 + 15}}</span>元</view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class='kind-list'>
+    <view class='panel-padding'>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>订单号</view>
+        <view class='kind-list-bd'>{{order.orderNo}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>服务类型</view>
+        <view class='kind-list-bd'>{{order.title}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>下单时间</view>
+        <view class='kind-list-bd'>{{createTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>上门时间</view>
+        <view class='kind-list-bd'>{{bookTime1}}</view>
+      </view>
+      <view class='kind-list-item'>
+        <view class='kind-list-hd'>付款时间</view>
+        <view class='kind-list-bd'>{{finishTime1}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

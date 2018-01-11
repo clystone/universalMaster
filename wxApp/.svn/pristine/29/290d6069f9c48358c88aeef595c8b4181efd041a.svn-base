@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="page">
+  <view class='logo-box'>
+    <image class='logo-image' src='resources/logo.png'></image>
+    <view class='logo-title strong'>全能师傅　为家服务</view>
+    <view class='logo-desc'>Universal Master Serves the Home</view>
+  </view>
+  <view class='index-bd'>
+    <view class='kind-list'>
+      <navigator url='pages/demand/demand'>
+        <view class='kind-list-item'>
+          <view class='kind-list-item-left'>
+            <view class='kind-list-item-title strong l-font'>
+              <text>家电维修</text>
+            </view>
+            <view class='kind-list-item-desc xs-font'>
+              <text>上门检修\n家庭维修 随时响应</text>
+            </view>
+            <view class='kind-list-item-tips strong'>
+              <text>Universal Master</text>
+            </view>
+          </view>
+
+          <image class='kind-list-item-img' src='resources/door-service.png'></image>
+
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,116 @@
+/**index.wxss**/
+@import "../common/index.wxss";
+.navigator-hover {
+  border-radius: 10rpx;
+}
+.logo-box {
+  height: 424rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #0087FE;
+}
+.logo-box1 {
+  height: 300px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background-color: #0087FE;
+}
+.logo-image {
+  width: 132px;
+  height: 88px;
+  margin: 20px auto 10px;
+}
+.logo-title {
+  font-size: 60rpx;
+}
+.logo-desc {
+  font-size: 32rpx;
+}
+.kind-list {
+  padding: 0 0;
+  margin-top: -20px;
+}
+.kind-list-item {
+  display: flex;
+  height: 292rpx;
+  /* padding: 0 40rpx; */
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow:0 2px 4px #eeeeee;
+}
+.kind-list-item-left {
+  flex: 1;
+}
+.kind-list-item-title {
+  margin: 0 0 0 0;
+  color: #363636;
+}
+.kind-list-item-desc {
+  padding: 15rpx 0 15rpx;
+  color: #999;
+}
+.kind-list-item-tips {
+  color: #787878;
+}
+.kind-list-item-img {
+  height: 60px;
+  width: 60px;
+}
+
+.kind-list-item-img1 {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.fs12{
+  font-size: 12px
+}
+
+.pt60{
+  padding-top: 60rpx;
+}
+
+
+.pt40{
+  padding-top: 40rpx;
+}
+
+.colorMain{
+  color:#0087FE;
+}
+
+.pt20{
+  padding-top: 10rpx;
+}
+
+.ml10{
+  margin-left: 10px;
+}
+
+.linePic{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.color555{
+  color:#555;
+}
+
+
+.pt5{
+  padding-top: 15px;
+}
+
+.fs10{
+  font-size: 20rpx;
+}
+
+.rem1{
+  font-size: 22rpx;
+}
