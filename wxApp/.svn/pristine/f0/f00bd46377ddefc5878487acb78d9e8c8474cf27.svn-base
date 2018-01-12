@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="page">
+  <view class='panel-padding' style='margin-bottom:50px;'>
+    <!-- <view class="navbar-item" wx:for="{{userAddresses}}" wx:for-index="idx" data-idx="{{idx}}" data-currentid="{{item.id}}" bindtap='changeSelected'> -->
+    <view class="navbar-item" wx:for="{{userAddresses}}" wx:for-index="idx" data-idx="{{idx}}" data-currentid="{{item.id}}">
+      <view class="contact-box {{currentId1==item.id ? 'active' : ''}}">
+        <view class='contact-panel'>
+          <view class='contact-name l-font'>
+            <text class='strong'>{{item.name}}</text>
+            <view class='contact-img-box'>
+              <image class='contact-img-phone' src='../../../../images/phone.png'></image>
+            </view>
+            <text class='userphone'>{{item.phone}}</text>
+             <text class="defAddr {{currentId1==item.id ? 'active' : ''}}">使用中</text> 
+          </view>
+          <view class='contact-address'>
+            <view class='contact-img-box'>
+              <image class='contact-img-address' src='../../../../images/position.png'></image>
+            </view>
+            <text class='contact-desc'>{{item.province}}{{item.city}}{{item.district}}{{item.addr}}</text>
+          </view>
+          <view class='contact-btn-box'>
+            <view class='contact-btn contact-btn-edit' catchtap='useAddr' data-currentid="{{item.id}}" style='border:1px solid #0097fe;border-radius:5px;'>使用</view>
+            <view class='contact-btn contact-btn-edit' catchtap='delItem' data-currentid="{{item.id}}" style='border:1px solid #0097fe;border-radius:5px;'>删除</view>
+            <!-- <view class='contact-btn contact-btn-edit'>使用</view> -->
+            <!-- <view class='contact-btn contact-btn-edit'>
+              <navigator url='../contactinput/contactinput' hover-class='none'>编辑</navigator>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <button class="low-bottom-btn" bindtap='returnDemand' wx:if='{{chooseAddr}}'>确定使用</button> -->
+  </view>
+
+  <!-- <button class="low-bottom-btn">使用</button> -->
+
+  <view class="low-bottom-box">
+    <navigator url='../newContactinput/newContactinput?currentSkill={{currentSkill}}'>
+      <button class="low-bottom-btn">新增联系方式</button>
+    </navigator>
+  </view>
+</view>

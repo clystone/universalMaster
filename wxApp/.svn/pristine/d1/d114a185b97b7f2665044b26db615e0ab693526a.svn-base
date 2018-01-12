@@ -10,7 +10,7 @@ Page({
     currentItem: null,
     cutrrentId: null,
     // userAddresses:null
-    chooseAddr: null
+    chooseAddr:null
   },
 
   /**
@@ -19,11 +19,11 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      currentSkill: options.currentSkill
+      chooseAddr: options.chooseAddr
     })
-
+    
   },
-  onShow: function () {
+  onShow: function (){
     that = this;
     wx.request({
       url: app.globalData.url + '/api/user/findAddr',
@@ -77,7 +77,7 @@ Page({
     })
 
   },
-  useAddr: function (e) {
+  useAddr:function(e){
     let that = this;
     let addrId = e.currentTarget.dataset.currentid
     console.log(addrId)
@@ -88,16 +88,7 @@ Page({
       data: {},
       success: function (res) {
         console.log(res.data);
-        if (that.data.currentSkill != 'undefined'){
-          wx.redirectTo({
-            url: '../newDemand/newDemand?currentSkill=' + that.data.currentSkill,
-          })
-        }
-        else{
-          wx.redirectTo({
-            url: '../chooseSkill/chooseSkill',
-          })
-        }
+        that.onShow()
       },
       fail: err => {
         console.log(err)
@@ -137,13 +128,13 @@ Page({
     })
 
   },
-  returnDemand: function () {
-    if (this.data.currentId) {
+  returnDemand:function(){
+    if (this.data.currentId){
       wx.redirectTo({
         url: '../newDemand/newDemand',
       })
     }
-    else {
+    else{
       wx.showModal({
         title: '请选择联系地址信息',
         confirmColor: '#0087fe',
@@ -157,6 +148,6 @@ Page({
         }
       })
     }
-
+    
   }
 })

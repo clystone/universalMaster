@@ -1,0 +1,69 @@
+{
+  "pages":[
+    "page/index/index",
+    "page/order/index",
+    "page/my/index",
+    "page/index/pages/contact/contact",
+    "page/index/pages/newContact/newContact",
+    "page/index/pages/judge/judge",
+    "page/index/pages/chooseagency/chooseagency",
+    "page/index/pages/qrcode/qrcode",
+    "page/index/pages/getLocation/getLocation",
+    "page/index/pages/contactinput/contactinput",
+    "page/index/pages/newContactinput/newContactinput",
+    "page/index/pages/updatecontact/updatecontact",
+    "page/index/pages/demand/demand",
+    "page/index/pages/newDemand/newDemand",
+    "page/index/pages/chooseSkill/chooseSkill",
+    "page/index/pages/order/order",
+    "page/index/pages/osuccess/osuccess",
+    "page/index/pages/urgent/urgent",
+    "page/index/pages/booksuccess/booksuccess",
+    "page/index/pages/toBeDecided/toBeDecided",
+    "page/index/pages/servicecomplete/servicecomplete",
+    "page/index/pages/ocomplete/ocomplete",
+    "page/index/pages/paysuccess/paysuccess",
+    "page/index/pages/evaluation/evaluation",
+    "page/index/pages/evaluatesuccess/evaluatesuccess",    
+    "page/common/index",
+    "page/my/pages/contact/contact",
+    "page/my/pages/contactinput/contactinput" 
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#0087FE",
+    "navigationBarTitleText": "全能师傅",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#0087FE"
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "color":"#cccccc",
+    "selectedColor":"#363636",
+    "borderStyle":"black",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "首页",
+        "iconPath":"images/home.png",
+        "selectedIconPath":"images/home-active.png"
+      },
+      {
+        "pagePath": "page/order/index",
+        "text": "订单",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order-active.png"
+      },
+      {
+        "pagePath": "page/my/index",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-active.png"
+      }  
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

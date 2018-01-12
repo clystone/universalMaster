@@ -1,0 +1,55 @@
+page{
+  background-color: #fff;
+}
+
+.skillContainer{
+  margin-top: 40rpx;
+}
+
+.flex1 {
+  flex: 1;
+  text-align: center;
+}
+
+.skillPic {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.skillContainer {
+  overflow: hidden;
+}
+
+.skillBox {
+  float: left;
+  width: 33.3%;
+  color: rgb(128, 128, 128);
+}
+
+.boxItem {
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.skillDes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+ 
+  font-size: 12px;
+}
+
+.picBox {
+  display: flex;
+  justify-content: center;
+}
+
+ .active{
+  background-color: #0087fe;
+  color: #fff;
+} 

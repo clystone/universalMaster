@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b56086b3-d997-461a-9098-cfb16c306828" name="Default" comment="" />
+    <list default="true" readonly="true" id="b56086b3-d997-461a-9098-cfb16c306828" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
+      <change beforePath="$PROJECT_DIR$/page/index/index.wxml" afterPath="$PROJECT_DIR$/page/index/index.wxml" />
+      <change beforePath="$PROJECT_DIR$/page/index/pages/servicecomplete/servicecomplete.js" afterPath="$PROJECT_DIR$/page/index/pages/servicecomplete/servicecomplete.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,7 +24,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -133,7 +139,7 @@
       <updated>1515398517488</updated>
       <workItem from="1515398518667" duration="45000" />
       <workItem from="1515398564094" duration="472000" />
-      <workItem from="1515759579718" duration="236000" />
+      <workItem from="1515759579718" duration="37000" />
     </task>
     <task id="LOCAL-00001">
       <created>1515398605961</created>
@@ -142,28 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515398605961</updated>
     </task>
-    <task id="LOCAL-00002">
-      <created>1515759633368</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1515759633368</updated>
-    </task>
-    <task id="LOCAL-00003">
-      <created>1515759813856</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1515759813856</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="753000" />
+    <option name="totallyTimeSpent" value="554000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

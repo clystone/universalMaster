@@ -1,0 +1,5 @@
+@import "../../../common/lib/weui.wxss";
+@import "../../../common/index.wxss";
+.address-input-box {
+  align-items: flex-start;
+}

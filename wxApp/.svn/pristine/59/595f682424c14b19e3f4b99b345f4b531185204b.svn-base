@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="b56086b3-d997-461a-9098-cfb16c306828" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/wxApp.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/complain.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/complain2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/help.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/help.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/play1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/question.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/stop1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseSkill" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseSkill/chooseSkill.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseSkill/chooseSkill.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseSkill/chooseSkill.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseSkill/chooseSkill.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseagency" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseagency/chooseagency.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseagency/chooseagency.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseagency/chooseagency.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/chooseagency/chooseagency.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contact" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contact/contact.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contact/contact.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contact/contact.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contact/contact.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contactinput" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contactinput/contactinput.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contactinput/contactinput.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contactinput/contactinput.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/contactinput/contactinput.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/getLocation" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/getLocation/getLocation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/getLocation/getLocation.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/getLocation/getLocation.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/getLocation/getLocation.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/judge" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/judge/judge.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/judge/judge.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/judge/judge.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/judge/judge.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContact" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContact/newContact.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContact/newContact.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContact/newContact.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContact/newContact.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContactinput" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContactinput/newContactinput.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContactinput/newContactinput.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContactinput/newContactinput.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newContactinput/newContactinput.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newDemand" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newDemand/newDemand.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newDemand/newDemand.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newDemand/newDemand.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/newDemand/newDemand.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order/order.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order/order.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order/order.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order/order.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order1" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order1/order1.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order1/order1.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order1/order1.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order1/order1.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order2/order2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order2/order2.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order2/order2.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order2/order2.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order3" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order3/order3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order3/order3.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order3/order3.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order3/order3.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order4/order4.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order4/order4.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order4/order4.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order4/order4.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order5/order5.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order5/order5.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order5/order5.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/order5/order5.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode/qrcode.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode/qrcode.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode/qrcode.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode/qrcode.wxs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/qrcode/qrcode.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/toBeDecided" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/toBeDecided/toBeDecided.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/toBeDecided/toBeDecided.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/toBeDecided/toBeDecided.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/toBeDecided/toBeDecided.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/updatecontact" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/updatecontact/updatecontact.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/updatecontact/updatecontact.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/updatecontact/updatecontact.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/pages/updatecontact/updatecontact.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/click.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/click1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/complain1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/line.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/record.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/tools.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/index/resources/write.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/my/pages/updatecontact" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/my/pages/updatecontact/updatecontact.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/my/pages/updatecontact/updatecontact.wxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/my/pages/updatecontact/updatecontact.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/my/resources/agency.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/order/index.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/order/resources/leftArrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/page/order/resources/rightArrow.png" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="wxApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxApp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxApp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxApp" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxApp" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\stone\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\小程序\wxApp" />
+          <option name="myCopyRoot" value="F:\小程序\wxApp" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\小程序\wxApp\.idea" />
+          <option name="myCopyRoot" value="F:\小程序\wxApp\.idea" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\小程序\wxApp" />
+          <option name="myCopyRoot" value="F:\小程序\wxApp" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b56086b3-d997-461a-9098-cfb16c306828" name="Default" comment="" />
+      <created>1515398517488</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515398517488</updated>
+      <workItem from="1515398518667" duration="45000" />
+      <workItem from="1515398564094" duration="472000" />
+      <workItem from="1515759579718" duration="202000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1515398605961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515398605961</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1515759633368</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1515759633368</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="719000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
